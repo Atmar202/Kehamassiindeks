@@ -23,9 +23,9 @@ app.post('/', (request, response) => {
         valem = valem.toFixed(1);
         let tabel = '';
         if(valem < 19){ tabel = 'alakaal'; }
-        if(valem < 24.9 && valem > 19){ tabel = 'normaalkaal'; }
-        if(valem < 29.9 && valem > 25){ tabel = 'ülekaal'; }
-        if(valem > 30){ tabel = 'rasvumine'; }
+        else if(valem < 24.9 && valem > 19){ tabel = 'normaalkaal'; }
+        else if(valem < 29.9 && valem > 25){ tabel = 'ülekaal'; }
+        else if(valem > 30){ tabel = 'rasvumine'; }
 
         response.write(`Tere ${nimi}, sinu kehamassiindeks on: ${valem}\n`);
         response.write(`Sul on ${tabel}`);
